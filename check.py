@@ -17,11 +17,30 @@ for token in tokenized_story:
     token = token.replace("\n", "")
     no_punctuation_tokens.append(token)
 
-lowercase_token = [] #convert all word in lower case   
+lowercase_tokens = [] #convert all word in lower case   
 for lowercase in no_punctuation_tokens:
 	lowercase = lowercase.lower()
-	lowercase_token.append(lowercase)
+	lowercase_tokens.append(lowercase)
 
-print (lowercase_token)	
+print (lowercase_tokens)
+
+#function to remove punctuation
+no_punctuation_tokens = []
+
+def remove_punctuation(token):
+  
+    token = token.replace(".", "")
+    token = token.replace(",", "")
+    token = token.replace("'", "")
+    token = token.replace("'", "")
+    token = token.replace(";", "") 
+    token = token.replace("\n", "")
+    return token.lower()
+for token in tokenized_story:
+    token = remove_punctuation(token)
+    no_punctuation_tokens.append(token)	
+    
+
+
 
 
